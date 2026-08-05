@@ -225,65 +225,65 @@ input:focus, textarea:focus, button:focus { outline: 2px solid #ffffff; border-c
     section { padding-top: 40px; padding-bottom: 40px; }
 
     /* Hero */
-    .banner { padding-top: 100px !important; }
+    .banner { padding-top: 90px !important; }
     .banner-content { text-align: center !important; }
-    .banner-content h1 { font-size: 56px !important; letter-spacing: -1px !important; line-height: 1 !important; margin-bottom: 12px !important; }
-    .banner-content h3 { font-size: 18px !important; margin-bottom: 10px !important; }
-    .banner-eyebrow { font-size: 11px !important; letter-spacing: 2px !important; margin-bottom: 12px !important; }
-    .banner-content p { font-size: 15px !important; line-height: 1.5 !important; margin-top: 12px !important; }
-    .banner-img { margin-top: 16px !important; }
-    .banner-img img { max-width: 80%; margin: 0 auto; }
-    .token { padding: 8px 10px !important; margin-bottom: 10px !important; }
-    .token p { font-size: 12px !important; word-break: break-all; line-height: 1.4 !important; }
-    .token button { font-size: 13px !important; }
-    .banner-actions { justify-content: center !important; margin-top: 14px !important; }
+    .banner-content h1 { font-size: 44px !important; letter-spacing: 0 !important; line-height: 1 !important; margin-bottom: 8px !important; }
+    .banner-content h3 { font-size: 16px !important; margin-bottom: 8px !important; }
+    .banner-eyebrow { font-size: 10px !important; letter-spacing: 1px !important; margin-bottom: 10px !important; }
+    .banner-content p { font-size: 14px !important; line-height: 1.45 !important; margin-top: 10px !important; }
+    .banner-img { margin-top: 12px !important; }
+    .banner-img img { max-width: 75%; margin: 0 auto; }
+    .token { padding: 6px 8px !important; margin-bottom: 8px !important; }
+    .token p { font-size: 11px !important; word-break: break-all; line-height: 1.35 !important; }
+    .token button { font-size: 12px !important; }
+    .banner-actions { justify-content: center !important; margin-top: 10px !important; }
 
     /* Narrative */
-    .how-title { margin-bottom: 20px !important; }
-    .how-title h2 { font-size: 32px !important; }
-    .how-cards { justify-content: center !important; gap: 12px !important; }
-    .how-cards .single { width: 100% !important; max-width: 100% !important; margin: 0 0 12px 0 !important; padding: 20px 16px !important; }
-    .how-cards .single .icon { margin-bottom: 12px !important; }
-    .how-cards .single .icon svg { width: 44px !important; height: 44px !important; }
-    .how-cards .single .counter { right: 12px !important; top: 8px !important; }
-    .how-cards .single .counter span { font-size: 18px !important; }
-    .how-cards .single .text h5 { font-size: 22px !important; margin-bottom: 8px !important; }
-    .how-cards .single .text p { font-size: 15px !important; line-height: 1.45 !important; }
-    .how-img { position: relative !important; top: auto !important; left: auto !important; max-width: 70%; margin: 0 auto 24px; display: block; transform: rotate(-2deg); }
+    .how-title { margin-bottom: 16px !important; }
+    .how-title h2 { font-size: 28px !important; }
+    .how-cards { justify-content: center !important; gap: 10px !important; }
+    .how-cards .single { width: 100% !important; max-width: 100% !important; margin: 0 0 10px 0 !important; padding: 16px 14px !important; }
+    .how-cards .single .icon { margin-bottom: 8px !important; }
+    .how-cards .single .icon svg { width: 36px !important; height: 36px !important; }
+    .how-cards .single .counter { right: 10px !important; top: 6px !important; }
+    .how-cards .single .counter span { font-size: 14px !important; }
+    .how-cards .single .text h5 { font-size: 18px !important; margin-bottom: 6px !important; }
+    .how-cards .single .text p { font-size: 13px !important; line-height: 1.4 !important; }
+    .how-img { position: relative !important; top: auto !important; left: auto !important; max-width: 60%; margin: 0 auto 16px; display: block; transform: rotate(-2deg); }
 
     /* Roadmap */
-    .roadmap-title { margin-bottom: 24px !important; }
-    .roadmap-title h3 { font-size: 32px !important; }
-    .roadmap-card { border-radius: 20px !important; margin-bottom: 16px !important; }
-    .roadmap-card h6.phase { font-size: 18px !important; padding-top: 12px !important; padding-bottom: 12px !important; }
-    .roadmap-card .card-body { padding: 24px 16px !important; }
-    .roadmap-card .card-body .body-text h5 { font-size: 24px !important; margin-bottom: 4px !important; }
-    .roadmap-card .card-body .body-text h5 + h5 { margin-bottom: 12px !important; }
-    .roadmap-card .card-body .body-text p { font-size: 16px !important; line-height: 1.4 !important; }
+    .roadmap-title { margin-bottom: 20px !important; }
+    .roadmap-title h3 { font-size: 28px !important; }
+    .roadmap-card { border-radius: 16px !important; margin-bottom: 12px !important; }
+    .roadmap-card h6.phase { font-size: 15px !important; padding-top: 10px !important; padding-bottom: 10px !important; }
+    .roadmap-card .card-body { padding: 18px 14px !important; }
+    .roadmap-card .card-body .body-text h5 { font-size: 20px !important; margin-bottom: 2px !important; }
+    .roadmap-card .card-body .body-text h5 + h5 { font-size: 20px !important; margin-bottom: 8px !important; }
+    .roadmap-card .card-body .body-text p { font-size: 14px !important; line-height: 1.35 !important; }
 
     /* Tokenomics */
-    .tokenomics-wrap { padding: 24px 16px !important; }
-    .tokenomics-wrap h3 { font-size: 32px !important; margin-bottom: 20px !important; }
-    .tokenomics-wrap ul { margin-bottom: 20px !important; }
-    .tokenomics-wrap ul li { font-size: 16px !important; gap: 10px !important; padding: 6px 0 !important; }
-    .tokenomics-wrap ul li svg { width: 20px !important; height: 20px !important; }
-    .tokenomics-wrap ul li p { font-size: 15px !important; }
-    .tokenomics-wrap ul li span { font-size: 15px !important; }
-    .tokenomics-wrap .img { padding-top: 20px !important; padding-bottom: 20px !important; }
-    .tokenomics-wrap .img img { max-width: 160px !important; }
-    .tokenomics .btns { flex-direction: column !important; gap: 10px !important; margin-top: 16px !important; }
-    .tokenomics .btns button { width: 100% !important; flex-grow: 0 !important; padding: 10px 14px !important; font-size: 13px !important; gap: 8px !important; border-radius: 14px !important; }
-    .tokenomics .btns button svg { width: 20px !important; height: 20px !important; }
+    .tokenomics-wrap { padding: 20px 14px !important; }
+    .tokenomics-wrap h3 { font-size: 28px !important; margin-bottom: 16px !important; }
+    .tokenomics-wrap ul { margin-bottom: 16px !important; }
+    .tokenomics-wrap ul li { font-size: 14px !important; gap: 8px !important; padding: 5px 0 !important; }
+    .tokenomics-wrap ul li svg { width: 18px !important; height: 18px !important; }
+    .tokenomics-wrap ul li p { font-size: 13px !important; }
+    .tokenomics-wrap ul li span { font-size: 13px !important; }
+    .tokenomics-wrap .img { padding-top: 16px !important; padding-bottom: 16px !important; }
+    .tokenomics-wrap .img img { max-width: 140px !important; }
+    .tokenomics .btns { flex-direction: column !important; gap: 8px !important; margin-top: 12px !important; }
+    .tokenomics .btns button { width: 100% !important; flex-grow: 0 !important; padding: 8px 12px !important; font-size: 12px !important; gap: 6px !important; border-radius: 12px !important; }
+    .tokenomics .btns button svg { width: 18px !important; height: 18px !important; }
 
     /* Footer */
-    .footer { padding-top: 24px !important; padding-bottom: 24px !important; }
-    .footer p { font-size: 16px !important; margin-bottom: 8px !important; }
-    .footer .disclaimer { font-size: 11px !important; line-height: 1.4 !important; max-width: 90%; margin: 0 auto; }
+    .footer { padding-top: 20px !important; padding-bottom: 20px !important; }
+    .footer p { font-size: 14px !important; margin-bottom: 6px !important; }
+    .footer .disclaimer { font-size: 10px !important; line-height: 1.35 !important; max-width: 90%; margin: 0 auto; }
 
     /* Buttons global */
-    .btn { width: 100% !important; justify-content: center !important; padding: 12px 18px !important; font-size: 14px !important; border-radius: 14px !important; }
+    .btn { width: 100% !important; justify-content: center !important; padding: 10px 14px !important; font-size: 13px !important; border-radius: 12px !important; }
 
     /* Header mobile menu */
-    .heading-menu { padding: 16px !important; }
-    .heading-link { font-size: 16px !important; padding: 10px 0 !important; }
+    .heading-menu { padding: 12px !important; }
+    .heading-link { font-size: 14px !important; padding: 8px 0 !important; }
 }
