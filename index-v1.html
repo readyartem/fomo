@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FOMO</title>
+    <link rel="stylesheet" href="vendor.css" />
+    <link rel="stylesheet" href="fomo.css" />
+
+</head>
+
+<body>
+    <div id="root">
+        <div class="common-snowfall" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;">
+            <canvas id="snow" style="position:absolute;top:0;left:0;width:100%;height:100%;"></canvas>
+        </div>
+
+        <!-- ===== Header ===== -->
+        <header class="heading" id="heading">
+            <div class="container">
+            <div class="heading-wrap flex items-center justify-between">
+                <a href="#banner" class="logo block cursor-pointer"><img src="assets/group-2.png" alt="FOMO" style="height:44px;width:auto;display:block;" /></a>
+
+                <nav class="heading-menu" id="menu">
+                    <div class="title flex items-center justify-between lg:hidden">
+                        <a href="#banner" class="logo block"><img src="assets/group-2.png" alt="FOMO" style="height:40px;width:auto;display:block;" /></a>
+                        <button class="heading-toggler" onclick="toggleMenu()">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><g clipPath="url(#c0)"><path d="M30 10L10 30" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><path d="M10 10L30 30" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></g><defs><clipPath id="c0"><rect width="40" height="40" fill="#ffffff"/></clipPath></defs></svg>
+                        </button>
+                    </div>
+                    <ul class="lg:flex items-center">
+                        <li><a class="heading-link uppercase" href="#how">Narrative</a></li>
+                        <li><a class="heading-link uppercase" href="#roadmap">The Vision</a></li>
+                        <li><a class="heading-link uppercase" href="#tokenomics">Tokenomics</a></li>
+                    </ul>
+                </nav>
+
+                <div class="heading-actions flex items-center flex-wrap">
+                    <a class="social-link flex items-center justify-center" href="https://x.com/fomo" target="_blank" aria-label="X"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                    <a class="social-link flex items-center justify-center" href="https://t.me/fomocoin" target="_blank" aria-label="Telegram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+                    <button class="heading-toggler lg:hidden" onclick="toggleMenu()" aria-label="Menu">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M6.7 10H33.3" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><path d="M6.7 20H33.3" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><path d="M6.7 30H33.3" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+                    </button>
+                </div>
+            </div>
+            </div>
+        </header>
+
+        <!-- ===== Banner ===== -->
+        <section class="banner" id="banner">
+            <div class="container">
+            <div class="row justify-center">
+                <div class="col-lg-6 xl:!p-0">
+                    <div class="banner-content">
+                        <span class="banner-eyebrow">$FOMO</span>
+                        <h1 class="font-normal leading-[80%] tracking-[-2px]">FOMO</h1>
+
+                        <div class="token rounded border border-2 flex items-center justify-between relative z-[1]">
+                            <p class="!mb-0 font-bold flex-1 text-center" id="ca">0x12347343t4284y28y42995927599bbfjhf282852875925295729y87gg</p>
+                            <button onclick="copyAddress()" class="bg-transparent p-0 border-0">Copy</button>
+                        </div>
+                        <p>History is repeating itself. Back in 2024 normies entered memecoins through <strong>TikTok</strong> — wallet screenshots in the comments, hype spreading fast. This time it's <b class="text-white">FOMO</b>. The narrative is impossible to ignore.</p>
+                        <div class="banner-actions flex gap-3 flex-wrap">
+                            <a href="#how" class="btn items-center">How To Buy</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <div class="banner-img">
+                        <img src="assets/group-1.png" alt="FOMO Coin" />
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- ===== Narrative cards ===== -->
+        <section class="how" id="how">
+            <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="how-title text-center"><h2>The Narrative</h2></div>
+                </div>
+                <div class="col-12">
+                <div class="how-wrap relative z-[1] md:flex justify-end">
+                    <img src="assets/group-4.png" class="md:absolute how-img -top-5 -left-14" alt="The Narrative" />
+                    <div class="how-cards flex flex-wrap justify-end">
+                        <div class="single relative">
+                            <div class="counter absolute top-0 right-7 flex items-center justify-center uppercase"><span class="hidden md:block">01</span><span class="md:hidden">1</span></div>
+                            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+                            <div class="text"><h5>The FOMO App</h5><p>The biggest onboarding app right now is FOMO. Hundreds of thousands of new users are introduced to crypto &amp; memecoins through it.</p></div>
+                        </div>
+                        <div class="single relative">
+                            <div class="counter absolute top-0 right-7 flex items-center justify-center uppercase"><span class="hidden md:block">02</span><span class="md:hidden">2</span></div>
+                            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+                            <div class="text"><h5>The Coin</h5><p>For the first time, there's a FOMO Coin. The narrative is impossible to ignore.</p></div>
+                        </div>
+                        <div class="single relative">
+                            <div class="counter absolute top-0 right-7 flex items-center justify-center uppercase"><span class="hidden md:block">03</span><span class="md:hidden">3</span></div>
+                            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></div>
+                            <div class="text"><h5>And Ape</h5><p>People will open the FOMO app, see FOMO Coin… and ape. Just like TikTok normies in 2024.</p></div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- ===== Roadmap ===== -->
+        <section class="roadmap" id="roadmap">
+            <div class="container">
+            <div class="relative z-0">
+                <div class="roadmap-title mb-8 lg:mb-12 xl:mb-[80px] text-center"><h3>The Vision</h3></div>
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-4 mb-6 lg:mb-10">
+                        <div class="roadmap-card">
+                            <h6 class="text-center text-2xl py-4 lg:py-5 xl:text-[32px] border-b-[2px] lg:border-b-[3px] border-black text-white phase hot">Phase 01</h6>
+                            <div class="card-body text-center relative">
+                                <div class="body-text">
+                                    <h5 class="text-[35px] xl:text-[44px] uppercase">VIRAL</h5>
+                                    <h5 class="text-[35px] xl:text-[44px] uppercase mb-6 lg:mb-[30px]">LAUNCH</h5>
+                                    <p class="text-2xl xl:text-[32px]">FOMO Coin drops. Clean. Loud. Undeniable. TikTok, X, and the FOMO app light up. The site hits different. People feel it. The speculation begins.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 mb-6 lg:mb-10">
+                        <div class="roadmap-card">
+                            <h6 class="text-center text-2xl py-4 lg:py-5 xl:text-[32px] border-b-[2px] lg:border-b-[3px] border-black text-white phase">Phase 02</h6>
+                            <div class="card-body text-center relative">
+                                <div class="body-text">
+                                    <h5 class="text-[35px] xl:text-[44px] uppercase">MASS</h5>
+                                    <h5 class="text-[35px] xl:text-[44px] uppercase mb-6 lg:mb-[30px]">ONBOARDING</h5>
+                                    <p class="text-2xl xl:text-[32px]">FOMO becomes the #1 onboarding app in crypto. New users flood in daily through the app — not TikTok, not ads. Pure organic FOMO. The community runs it.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 mb-6 lg:mb-10">
+                        <div class="roadmap-card">
+                            <h6 class="text-center text-2xl py-4 lg:py-5 xl:text-[32px] border-b-[2px] lg:border-b-[3px] border-black text-white phase hot">Phase 03</h6>
+                            <div class="card-body text-center relative">
+                                <div class="body-text">
+                                    <h5 class="text-[35px] xl:text-[44px] uppercase">GLOBAL</h5>
+                                    <h5 class="text-[35px] xl:text-[44px] uppercase mb-6 lg:mb-[30px]">FOMO</h5>
+                                    <p class="text-2xl xl:text-[32px]">Speculation becomes reality.<br>FOMO Coin and the app — one ecosystem. Millions onboarded daily.<br>Everyone is in.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Tokenomics ===== -->
+        <section class="tokenomics" id="tokenomics">
+            <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="tokenomics-wrap mx-auto justify-between">
+                        <div class="md:flex justify-between">
+                            <div class="text-center md:!text-left">
+                                <h3 class="mb-6 lg:mb-10 xl:mb-[58px] uppercase">Tok&shy;enomics</h3>
+                                <ul>
+                                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg><p>LP Burned</p> <span>67.3%</span></li>
+                                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><p>Community</p> <span>17.7%</span></li>
+                                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg><p>Marketing</p> <span>10%</span></li>
+                                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg><p>CEX Listings</p> <span>5%</span></li>
+                                </ul>
+                            </div>
+                            <div class="img"><img src="assets/group-3.png" alt="Tokenomics" /></div>
+                        </div>
+                        <div class="flex flex-wrap items-center gap-5 btns mt-7 md:mt-10 lg:mt-16">
+                            <button class="rounded-[20px] uppercase border-2 border-solid border-[#ffffff] flex flex-grow items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>LP Burned</button>
+                            <button class="rounded-[20px] uppercase border-2 border-solid border-[#ffffff] flex flex-grow items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Mint Disabled</button>
+                            <button class="rounded-[20px] uppercase border-2 border-solid border-[#ffffff] flex flex-grow items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 4l2 1l2 -1"/><path d="M12 2v6.5l3 1.72"/><path d="M17.928 6.268l.134 2.232l1.866 1.232"/><path d="M20.66 7l-5.629 3.25l.01 3.458"/><path d="M19.928 14.268l-1.866 1.232l-.134 2.232"/><path d="M20.66 17l-5.629 -3.25l-2.99 1.738"/><path d="M14 20l-2 -1l-2 1"/><path d="M12 22v-6.5l-3 -1.72"/><path d="M6.072 17.732l-.134 -2.232l-1.866 -1.232"/><path d="M3.34 17l5.629 -3.25l-.01 -3.458"/><path d="M4.072 9.732l1.866 -1.232l.134 -2.232"/><path d="M3.34 7l5.629 3.25l2.99 -1.738"/></svg>Freeze Disabled</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- ===== Footer ===== -->
+        <footer class="footer py-4 md:py-6 lg:py-8 xl:py-10 w-full text-center">
+            <p class="text-2xl md:text-2xl lg:text-3xl xl:text-[40px] font-bold">FOMO COIN © 2026</p>
+            <p class="disclaimer">$FOMO is a meme coin with no intrinsic value. Do your own research. Never invest more than you can afford to lose.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Sticky header
+        const hd = document.getElementById('heading');
+        window.addEventListener('scroll', () => hd.classList.toggle('position-fixed', window.scrollY > 120));
+
+        // Mobile menu
+        const menu = document.getElementById('menu');
+        function toggleMenu() { menu.classList.toggle('show-menu'); }
+        window.toggleMenu = toggleMenu;
+        document.querySelectorAll('.heading-link').forEach(a =>
+            a.addEventListener('click', () => menu.classList.remove('show-menu')));
+
+        // Copy address
+        function copyAddress() {
+            const txt = document.getElementById('ca').textContent;
+            const btn = event.target;
+            (navigator.clipboard ? navigator.clipboard.writeText(txt) : Promise.reject())
+                .catch(() => { const t = document.createElement('textarea'); t.value = txt; document.body.appendChild(t); t.select(); document.execCommand('copy'); t.remove(); });
+            const orig = btn.innerHTML; btn.innerHTML = 'Copied!';
+            setTimeout(() => (btn.innerHTML = orig), 2000);
+        }
+
+        // Falling "F" particles
+        const cv = document.getElementById('snow');
+        const c = cv.getContext('2d');
+        let W, H;
+        const res = () => { W = cv.width = innerWidth; H = cv.height = innerHeight; };
+        res(); addEventListener('resize', res);
+        const FOMO = ['F','O','M','O'];
+        const P = Array.from({ length: 40 }, (_, i) => ({
+            x: Math.random() * innerWidth, y: Math.random() * -innerHeight,
+            s: 22 + Math.random() * 28, sp: .3 + Math.random() * .7,
+            d: -.3 + Math.random() * .6, r: Math.random() * 6.28, rs: -.01 + Math.random() * .02,
+            a: .08, letter: FOMO[i % 4]
+        }));
+        (function draw() {
+            c.clearRect(0, 0, W, H);
+            P.forEach(p => {
+                p.y += p.sp; p.x += p.d; p.r += p.rs;
+                if (p.y > H + 90) { p.y = -90; p.x = Math.random() * W; }
+                if (p.x < -70) p.x = W + 40; if (p.x > W + 70) p.x = -40;
+                c.save(); c.translate(p.x, p.y); c.rotate(p.r); c.globalAlpha = p.a;
+                c.font = '700 ' + p.s + 'px "Archivo Black", sans-serif';
+                c.textAlign = 'center'; c.textBaseline = 'middle';
+                c.fillStyle = '#fff'; c.fillText(p.letter, 0, 0); c.restore();
+            });
+            requestAnimationFrame(draw);
+        })();
+    </script>
+</body>
+
+</html>

@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="favicon.png" />
@@ -8,7 +7,430 @@
     <title>FOMO</title>
     <link rel="stylesheet" href="vendor.css" />
     <link rel="stylesheet" href="fomo.css" />
+    <style>
+        /* ===== NEURASHI-INSPIRED LAYOUT (black/white only) ===== */
+        :root {
+            --font-heading: 'Archivo Black', sans-serif;
+            --font-body: 'Pragati Narrow', sans-serif;
+        }
 
+        /* --- Marquee --- */
+        .marquee-bar {
+            background: #000;
+            border-top: 2px solid #fff;
+            border-bottom: 2px solid #fff;
+            overflow: hidden;
+            white-space: nowrap;
+            padding: 14px 0;
+        }
+        .marquee-track {
+            display: inline-flex;
+            animation: marqueeScroll 12s linear infinite;
+            gap: 60px;
+        }
+        .marquee-track span {
+            font-family: var(--font-heading);
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #fff;
+            opacity: .9;
+        }
+        @keyframes marqueeScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* --- Hero New --- */
+        .hero-new {
+            position: relative;
+            padding-top: 100px;
+            padding-bottom: 60px;
+            text-align: center;
+            overflow: hidden;
+        }
+        .hero-top-label {
+            font-family: var(--font-heading);
+            font-size: 12px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #fff;
+            margin-bottom: 20px;
+            opacity: .8;
+        }
+        .hero-visual {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .hero-visual img {
+            max-width: 320px;
+            width: 100%;
+            display: block;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        .hero-title-bg {
+            font-family: var(--font-heading);
+            font-size: clamp(72px, 14vw, 160px);
+            line-height: .85;
+            letter-spacing: -4px;
+            color: #fff;
+            margin: 0;
+            position: relative;
+            z-index: 1;
+            margin-top: -30px;
+        }
+        .hero-token {
+            max-width: 520px;
+            margin: 24px auto 0;
+            border: 2px solid #fff;
+            background: #000;
+            box-shadow: 4px 4px 0 #fff;
+            border-radius: 12px;
+            padding: 10px 14px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        .hero-token p {
+            font-family: var(--font-body);
+            font-size: 13px;
+            color: #fff;
+            word-break: break-all;
+            margin: 0;
+            flex: 1;
+            text-align: center;
+            line-height: 1.4;
+        }
+        .hero-token button {
+            font-family: var(--font-heading);
+            font-size: 12px;
+            color: #fff;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+        .hero-desc {
+            max-width: 560px;
+            margin: 18px auto 0;
+            font-family: var(--font-body);
+            font-size: 16px;
+            line-height: 1.5;
+            color: #fff;
+        }
+        .hero-stats-row {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-top: 28px;
+            flex-wrap: wrap;
+        }
+        .hero-stat {
+            text-align: center;
+        }
+        .hero-stat span {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 11px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #fff;
+            opacity: .7;
+            margin-bottom: 4px;
+        }
+        .hero-stat b {
+            display: block;
+            font-family: var(--font-heading);
+            font-size: 20px;
+            color: #fff;
+        }
+        .hero-actions {
+            margin-top: 28px;
+        }
+
+        /* --- Sticker label --- */
+        .sticker-label {
+            display: inline-block;
+            background: #fff;
+            color: #000;
+            font-family: var(--font-heading);
+            font-size: 14px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 10px 22px;
+            border: 2px solid #fff;
+            box-shadow: 4px 4px 0 #fff;
+            transform: rotate(-2deg);
+            margin-bottom: 28px;
+        }
+
+        /* --- Section big title --- */
+        .section-big-title {
+            font-family: var(--font-heading);
+            font-size: clamp(48px, 10vw, 96px);
+            line-height: .9;
+            letter-spacing: -2px;
+            text-align: center;
+            color: #fff;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        /* --- Narrative cards (sticker style) --- */
+        .narrative-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .narrative-card {
+            border: 2px solid #fff;
+            background: #000;
+            box-shadow: 6px 6px 0 #fff;
+            padding: 24px 20px;
+            position: relative;
+            text-align: left;
+        }
+        .narrative-card .card-num {
+            position: absolute;
+            top: 12px;
+            right: 16px;
+            font-family: var(--font-heading);
+            font-size: 18px;
+            color: #fff;
+            opacity: .4;
+        }
+        .narrative-card .card-icon {
+            width: 44px;
+            height: 44px;
+            color: #fff;
+            margin-bottom: 14px;
+        }
+        .narrative-card h4 {
+            font-family: var(--font-heading);
+            font-size: 20px;
+            color: #fff;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+        .narrative-card p {
+            font-family: var(--font-body);
+            font-size: 15px;
+            color: #fff;
+            line-height: 1.45;
+            margin: 0;
+        }
+
+        /* --- Vision grid --- */
+        .vision-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .vision-card {
+            border: 2px solid #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            background: #000;
+            box-shadow: 6px 6px 0 #fff;
+        }
+        .vision-card .phase-header {
+            font-family: var(--font-heading);
+            font-size: 18px;
+            text-align: center;
+            padding: 14px;
+            border-bottom: 2px solid #fff;
+            color: #fff;
+            text-transform: uppercase;
+        }
+        .vision-card.hot .phase-header {
+            background: #fff;
+            color: #000;
+        }
+        .vision-card .phase-body {
+            padding: 24px 20px;
+            text-align: center;
+        }
+        .vision-card .phase-body h5 {
+            font-family: var(--font-heading);
+            font-size: 32px;
+            color: #fff;
+            margin-bottom: 4px;
+            line-height: 1;
+        }
+        .vision-card .phase-body h5 + h5 {
+            margin-bottom: 14px;
+        }
+        .vision-card .phase-body p {
+            font-family: var(--font-body);
+            font-size: 15px;
+            color: #fff;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* --- Tokenomics new --- */
+        .tokenomics-new {
+            max-width: 900px;
+            margin: 0 auto;
+            border: 2px solid #fff;
+            background: #000;
+            box-shadow: 6px 6px 0 #fff;
+            border-radius: 16px;
+            padding: 32px;
+        }
+        .tokenomics-new h3 {
+            font-family: var(--font-heading);
+            font-size: clamp(36px, 7vw, 64px);
+            text-align: center;
+            color: #fff;
+            margin-bottom: 28px;
+            text-transform: uppercase;
+        }
+        .tokenomics-new .tk-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .tokenomics-new .tk-list {
+            flex: 1 1 300px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .tokenomics-new .tk-list li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,.2);
+            font-family: var(--font-body);
+            font-size: 18px;
+            color: #fff;
+        }
+        .tokenomics-new .tk-list li svg {
+            width: 22px;
+            height: 22px;
+            color: #fff;
+            flex-shrink: 0;
+            margin-right: 8px;
+        }
+        .tokenomics-new .tk-list li p { margin: 0; display: flex; align-items: center; gap: 8px; }
+        .tokenomics-new .tk-list li span {
+            font-family: var(--font-heading);
+            font-size: 18px;
+            color: #fff;
+            white-space: nowrap;
+        }
+        .tokenomics-new .tk-img {
+            flex: 0 0 220px;
+            text-align: center;
+        }
+        .tokenomics-new .tk-img img {
+            max-width: 200px;
+        }
+        .tokenomics-new .tk-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 24px;
+            justify-content: center;
+        }
+        .tk-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 2px solid #fff;
+            background: #000;
+            color: #fff;
+            font-family: var(--font-heading);
+            font-size: 13px;
+            text-transform: uppercase;
+            padding: 10px 16px;
+            border-radius: 12px;
+            box-shadow: 3px 3px 0 #fff;
+            pointer-events: none;
+        }
+        .tk-badge svg { width: 20px; height: 20px; }
+
+        /* --- Footer CTA --- */
+        .footer-cta {
+            text-align: center;
+            padding: 60px 16px;
+        }
+        .footer-cta h3 {
+            font-family: var(--font-heading);
+            font-size: clamp(28px, 6vw, 52px);
+            color: #fff;
+            margin-bottom: 12px;
+            line-height: 1.1;
+        }
+        .footer-cta p {
+            max-width: 520px;
+            margin: 0 auto 24px;
+            font-family: var(--font-body);
+            font-size: 16px;
+            line-height: 1.5;
+            color: #fff;
+            opacity: .9;
+        }
+
+        /* --- Footer --- */
+        .site-footer {
+            border-top: 2px solid #fff;
+            padding: 32px 16px;
+            text-align: center;
+        }
+        .site-footer .ft-logo {
+            font-family: var(--font-heading);
+            font-size: 28px;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        .site-footer .ft-copy {
+            font-family: var(--font-body);
+            font-size: 14px;
+            color: #fff;
+            margin-bottom: 6px;
+        }
+        .site-footer .ft-disc {
+            font-family: var(--font-body);
+            font-size: 11px;
+            color: #fff;
+            opacity: .7;
+            max-width: 480px;
+            margin: 0 auto;
+            line-height: 1.4;
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 767px) {
+            .hero-new { padding-top: 80px; padding-bottom: 40px; }
+            .hero-title-bg { font-size: 64px; margin-top: -20px; }
+            .hero-visual img { max-width: 220px; }
+            .hero-token { max-width: 100%; }
+            .hero-stats-row { gap: 20px; }
+            .hero-stat b { font-size: 16px; }
+            .section-big-title { font-size: 48px; margin-bottom: 28px; }
+            .narrative-grid { grid-template-columns: 1fr; }
+            .vision-grid { grid-template-columns: 1fr; }
+            .tokenomics-new { padding: 20px; }
+            .tokenomics-new .tk-row { flex-direction: column; }
+            .tokenomics-new .tk-img { flex: 0 0 auto; margin-top: 20px; }
+            .tokenomics-new .tk-img img { max-width: 160px; }
+            .marquee-track span { font-size: 12px; }
+        }
+    </style>
 </head>
 
 <body>
@@ -22,7 +444,6 @@
             <div class="container">
             <div class="heading-wrap flex items-center justify-between">
                 <a href="#banner" class="logo block cursor-pointer"><img src="assets/group-2.png" alt="FOMO" style="height:44px;width:auto;display:block;" /></a>
-
                 <nav class="heading-menu" id="menu">
                     <div class="title flex items-center justify-between lg:hidden">
                         <a href="#banner" class="logo block"><img src="assets/group-2.png" alt="FOMO" style="height:40px;width:auto;display:block;" /></a>
@@ -36,7 +457,6 @@
                         <li><a class="heading-link uppercase" href="#tokenomics">Tokenomics</a></li>
                     </ul>
                 </nav>
-
                 <div class="heading-actions flex items-center flex-wrap">
                     <a class="social-link flex items-center justify-center" href="https://x.com/fomo" target="_blank" aria-label="X"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
                     <a class="social-link flex items-center justify-center" href="https://t.me/fomocoin" target="_blank" aria-label="Telegram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
@@ -48,147 +468,165 @@
             </div>
         </header>
 
-        <!-- ===== Banner ===== -->
-        <section class="banner" id="banner">
+        <!-- ===== Hero ===== -->
+        <section class="hero-new" id="banner">
             <div class="container">
-            <div class="row justify-center">
-                <div class="col-lg-6 xl:!p-0">
-                    <div class="banner-content">
-                        <span class="banner-eyebrow">$FOMO</span>
-                        <h1 class="font-normal leading-[80%] tracking-[-2px]">FOMO</h1>
-
-                        <div class="token rounded border border-2 flex items-center justify-between relative z-[1]">
-                            <p class="!mb-0 font-bold flex-1 text-center" id="ca">0x12347343t4284y28y42995927599bbfjhf282852875925295729y87gg</p>
-                            <button onclick="copyAddress()" class="bg-transparent p-0 border-0">Copy</button>
-                        </div>
-                        <p>History is repeating itself. Back in 2024 normies entered memecoins through <strong>TikTok</strong> — wallet screenshots in the comments, hype spreading fast. This time it's <b class="text-white">FOMO</b>. The narrative is impossible to ignore.</p>
-                        <div class="banner-actions flex gap-3 flex-wrap">
-                            <a href="#how" class="btn items-center">How To Buy</a>
-                        </div>
-                    </div>
+                <div class="hero-top-label">$FOMO</div>
+                <div class="hero-visual">
+                    <img src="assets/group-1.png" alt="FOMO" />
                 </div>
-                <div class="col-lg-6 text-center">
-                    <div class="banner-img">
-                        <img src="assets/group-1.png" alt="FOMO Coin" />
-                    </div>
+                <h1 class="hero-title-bg">FOMO</h1>
+                <div class="hero-token">
+                    <p id="ca">0x12347343t4284y28y42995927599bbfjhf282852875925295729y87gg</p>
+                    <button onclick="copyAddress()">Copy</button>
                 </div>
-            </div>
+                <p class="hero-desc">History is repeating itself. Back in 2024 normies entered memecoins through <strong>TikTok</strong> — wallet screenshots in the comments, hype spreading fast. This time it's <b>FOMO</b>. The narrative is impossible to ignore.</p>
+                <div class="hero-stats-row">
+                    <div class="hero-stat"><span>LP Burned</span><b>67.3%</b></div>
+                    <div class="hero-stat"><span>Mint</span><b>Disabled</b></div>
+                    <div class="hero-stat"><span>Freeze</span><b>Disabled</b></div>
+                </div>
+                <div class="hero-actions">
+                    <a href="#how" class="btn items-center">How To Buy</a>
+                </div>
             </div>
         </section>
 
-        <!-- ===== Narrative cards ===== -->
-        <section class="how" id="how">
+        <!-- ===== Marquee Bar ===== -->
+        <div class="marquee-bar">
+            <div class="marquee-track">
+                <span>LP Burned 67.3%</span>
+                <span>Mint Disabled</span>
+                <span>Freeze Disabled</span>
+                <span>Community 17.7%</span>
+                <span>Marketing 10%</span>
+                <span>CEX Listings 5%</span>
+                <span>LP Burned 67.3%</span>
+                <span>Mint Disabled</span>
+                <span>Freeze Disabled</span>
+                <span>Community 17.7%</span>
+                <span>Marketing 10%</span>
+                <span>CEX Listings 5%</span>
+            </div>
+        </div>
+
+        <!-- ===== Narrative ===== -->
+        <section id="how" style="padding-top:80px;padding-bottom:60px;">
             <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="how-title text-center"><h2>The Narrative</h2></div>
+                <div class="text-center">
+                    <div class="sticker-label">The Narrative</div>
                 </div>
-                <div class="col-12">
-                <div class="how-wrap relative z-[1] md:flex justify-end">
-                    <img src="assets/group-4.png" class="md:absolute how-img -top-5 -left-14" alt="The Narrative" />
-                    <div class="how-cards flex flex-wrap justify-end">
-                        <div class="single relative">
-                            <div class="counter absolute top-0 right-7 flex items-center justify-center uppercase"><span class="hidden md:block">01</span><span class="md:hidden">1</span></div>
-                            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
-                            <div class="text"><h5>The FOMO App</h5><p>The biggest onboarding app right now is FOMO. Hundreds of thousands of new users are introduced to crypto &amp; memecoins through it.</p></div>
+                <div class="narrative-grid">
+                    <div class="narrative-card">
+                        <div class="card-num">01</div>
+                        <div class="card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
                         </div>
-                        <div class="single relative">
-                            <div class="counter absolute top-0 right-7 flex items-center justify-center uppercase"><span class="hidden md:block">02</span><span class="md:hidden">2</span></div>
-                            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
-                            <div class="text"><h5>The Coin</h5><p>For the first time, there's a FOMO Coin. The narrative is impossible to ignore.</p></div>
+                        <h4>The FOMO App</h4>
+                        <p>The biggest onboarding app right now is FOMO. Hundreds of thousands of new users are introduced to crypto &amp; memecoins through it.</p>
+                    </div>
+                    <div class="narrative-card">
+                        <div class="card-num">02</div>
+                        <div class="card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
                         </div>
-                        <div class="single relative">
-                            <div class="counter absolute top-0 right-7 flex items-center justify-center uppercase"><span class="hidden md:block">03</span><span class="md:hidden">3</span></div>
-                            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></div>
-                            <div class="text"><h5>And Ape</h5><p>People will open the FOMO app, see FOMO Coin… and ape. Just like TikTok normies in 2024.</p></div>
+                        <h4>The Coin</h4>
+                        <p>For the first time, there's a FOMO Coin. The narrative is impossible to ignore.</p>
+                    </div>
+                    <div class="narrative-card">
+                        <div class="card-num">03</div>
+                        <div class="card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
                         </div>
+                        <h4>And Ape</h4>
+                        <p>People will open the FOMO app, see FOMO Coin… and ape. Just like TikTok normies in 2024.</p>
                     </div>
                 </div>
-                </div>
-            </div>
             </div>
         </section>
 
-        <!-- ===== Roadmap ===== -->
-        <section class="roadmap" id="roadmap">
+        <!-- ===== The Vision ===== -->
+        <section id="roadmap" style="padding-top:60px;padding-bottom:60px;">
             <div class="container">
-            <div class="relative z-0">
-                <div class="roadmap-title mb-8 lg:mb-12 xl:mb-[80px] text-center"><h3>The Vision</h3></div>
-                <div class="row">
-                    <div class="col-12 col-md-6 col-lg-4 mb-6 lg:mb-10">
-                        <div class="roadmap-card">
-                            <h6 class="text-center text-2xl py-4 lg:py-5 xl:text-[32px] border-b-[2px] lg:border-b-[3px] border-black text-white phase hot">Phase 01</h6>
-                            <div class="card-body text-center relative">
-                                <div class="body-text">
-                                    <h5 class="text-[35px] xl:text-[44px] uppercase">VIRAL</h5>
-                                    <h5 class="text-[35px] xl:text-[44px] uppercase mb-6 lg:mb-[30px]">LAUNCH</h5>
-                                    <p class="text-2xl xl:text-[32px]">FOMO Coin drops. Clean. Loud. Undeniable. TikTok, X, and the FOMO app light up. The site hits different. People feel it. The speculation begins.</p>
-                                </div>
-                            </div>
+                <h2 class="section-big-title">The Vision</h2>
+                <div class="vision-grid">
+                    <div class="vision-card hot">
+                        <div class="phase-header">Phase 01</div>
+                        <div class="phase-body">
+                            <h5>VIRAL</h5>
+                            <h5>LAUNCH</h5>
+                            <p>FOMO Coin drops. Clean. Loud. Undeniable. TikTok, X, and the FOMO app light up. The site hits different. People feel it. The speculation begins.</p>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6 col-lg-4 mb-6 lg:mb-10">
-                        <div class="roadmap-card">
-                            <h6 class="text-center text-2xl py-4 lg:py-5 xl:text-[32px] border-b-[2px] lg:border-b-[3px] border-black text-white phase">Phase 02</h6>
-                            <div class="card-body text-center relative">
-                                <div class="body-text">
-                                    <h5 class="text-[35px] xl:text-[44px] uppercase">MASS</h5>
-                                    <h5 class="text-[35px] xl:text-[44px] uppercase mb-6 lg:mb-[30px]">ONBOARDING</h5>
-                                    <p class="text-2xl xl:text-[32px]">FOMO becomes the #1 onboarding app in crypto. New users flood in daily through the app — not TikTok, not ads. Pure organic FOMO. The community runs it.</p>
-                                </div>
-                            </div>
+                    <div class="vision-card">
+                        <div class="phase-header">Phase 02</div>
+                        <div class="phase-body">
+                            <h5>MASS</h5>
+                            <h5>ONBOARDING</h5>
+                            <p>FOMO becomes the #1 onboarding app in crypto. New users flood in daily through the app — not TikTok, not ads. Pure organic FOMO. The community runs it.</p>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6 col-lg-4 mb-6 lg:mb-10">
-                        <div class="roadmap-card">
-                            <h6 class="text-center text-2xl py-4 lg:py-5 xl:text-[32px] border-b-[2px] lg:border-b-[3px] border-black text-white phase hot">Phase 03</h6>
-                            <div class="card-body text-center relative">
-                                <div class="body-text">
-                                    <h5 class="text-[35px] xl:text-[44px] uppercase">GLOBAL</h5>
-                                    <h5 class="text-[35px] xl:text-[44px] uppercase mb-6 lg:mb-[30px]">FOMO</h5>
-                                    <p class="text-2xl xl:text-[32px]">Speculation becomes reality.<br>FOMO Coin and the app — one ecosystem. Millions onboarded daily.<br>Everyone is in.</p>
-                                </div>
-                            </div>
+                    <div class="vision-card hot">
+                        <div class="phase-header">Phase 03</div>
+                        <div class="phase-body">
+                            <h5>GLOBAL</h5>
+                            <h5>FOMO</h5>
+                            <p>Speculation becomes reality.<br>FOMO Coin and the app — one ecosystem. Millions onboarded daily.<br>Everyone is in.</p>
                         </div>
                     </div>
-                </div>
                 </div>
             </div>
         </section>
 
         <!-- ===== Tokenomics ===== -->
-        <section class="tokenomics" id="tokenomics">
+        <section id="tokenomics" style="padding-top:60px;padding-bottom:60px;">
             <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="tokenomics-wrap mx-auto justify-between">
-                        <div class="md:flex justify-between">
-                            <div class="text-center md:!text-left">
-                                <h3 class="mb-6 lg:mb-10 xl:mb-[58px] uppercase">Tok&shy;enomics</h3>
-                                <ul>
-                                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg><p>LP Burned</p> <span>67.3%</span></li>
-                                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><p>Community</p> <span>17.7%</span></li>
-                                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg><p>Marketing</p> <span>10%</span></li>
-                                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg><p>CEX Listings</p> <span>5%</span></li>
-                                </ul>
-                            </div>
-                            <div class="img"><img src="assets/group-3.png" alt="Tokenomics" /></div>
-                        </div>
-                        <div class="flex flex-wrap items-center gap-5 btns mt-7 md:mt-10 lg:mt-16">
-                            <button class="rounded-[20px] uppercase border-2 border-solid border-[#ffffff] flex flex-grow items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>LP Burned</button>
-                            <button class="rounded-[20px] uppercase border-2 border-solid border-[#ffffff] flex flex-grow items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Mint Disabled</button>
-                            <button class="rounded-[20px] uppercase border-2 border-solid border-[#ffffff] flex flex-grow items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 4l2 1l2 -1"/><path d="M12 2v6.5l3 1.72"/><path d="M17.928 6.268l.134 2.232l1.866 1.232"/><path d="M20.66 7l-5.629 3.25l.01 3.458"/><path d="M19.928 14.268l-1.866 1.232l-.134 2.232"/><path d="M20.66 17l-5.629 -3.25l-2.99 1.738"/><path d="M14 20l-2 -1l-2 1"/><path d="M12 22v-6.5l-3 -1.72"/><path d="M6.072 17.732l-.134 -2.232l-1.866 -1.232"/><path d="M3.34 17l5.629 -3.25l-.01 -3.458"/><path d="M4.072 9.732l1.866 -1.232l.134 -2.232"/><path d="M3.34 7l5.629 3.25l2.99 -1.738"/></svg>Freeze Disabled</button>
-                        </div>
+                <div class="tokenomics-new">
+                    <h3>Tokenomics</h3>
+                    <div class="tk-row">
+                        <ul class="tk-list">
+                            <li>
+                                <p><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>LP Burned</p>
+                                <span>67.3%</span>
+                            </li>
+                            <li>
+                                <p><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Community</p>
+                                <span>17.7%</span>
+                            </li>
+                            <li>
+                                <p><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>Marketing</p>
+                                <span>10%</span>
+                            </li>
+                            <li>
+                                <p><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg>CEX Listings</p>
+                                <span>5%</span>
+                            </li>
+                        </ul>
+                        <div class="tk-img"><img src="assets/group-3.png" alt="Tokenomics" /></div>
+                    </div>
+                    <div class="tk-badges">
+                        <div class="tk-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>LP Burned</div>
+                        <div class="tk-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Mint Disabled</div>
+                        <div class="tk-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 4l2 1l2 -1"/><path d="M12 2v6.5l3 1.72"/><path d="M17.928 6.268l.134 2.232l1.866 1.232"/><path d="M20.66 7l-5.629 3.25l.01 3.458"/><path d="M19.928 14.268l-1.866 1.232l-.134 2.232"/><path d="M20.66 17l-5.629 -3.25l-2.99 1.738"/><path d="M14 20l-2 -1l-2 1"/><path d="M12 22v-6.5l-3 -1.72"/><path d="M6.072 17.732l-.134 -2.232l-1.866 -1.232"/><path d="M3.34 17l5.629 -3.25l-.01 -3.458"/><path d="M4.072 9.732l1.866 -1.232l.134 -2.232"/><path d="M3.34 7l5.629 3.25l2.99 -1.738"/></svg>Freeze Disabled</div>
                     </div>
                 </div>
             </div>
+        </section>
+
+        <!-- ===== Footer CTA ===== -->
+        <section class="footer-cta">
+            <div class="container">
+                <h3>Wanna know more about FOMO?</h3>
+                <p>FOMO is the native token for the community and the app. Grab SOL, paste the contract, and join the wave.</p>
+                <a href="#" class="btn items-center" onclick="copyAddress(); return false;">Copy Contract</a>
             </div>
         </section>
 
         <!-- ===== Footer ===== -->
-        <footer class="footer py-4 md:py-6 lg:py-8 xl:py-10 w-full text-center">
-            <p class="text-2xl md:text-2xl lg:text-3xl xl:text-[40px] font-bold">FOMO COIN © 2026</p>
-            <p class="disclaimer">$FOMO is a meme coin with no intrinsic value. Do your own research. Never invest more than you can afford to lose.</p>
+        <footer class="site-footer">
+            <div class="ft-logo">FOMO</div>
+            <p class="ft-copy">FOMO COIN &copy; 2026</p>
+            <p class="ft-disc">$FOMO is a meme coin with no intrinsic value. Do your own research. Never invest more than you can afford to lose.</p>
         </footer>
     </div>
 
@@ -214,7 +652,7 @@
             setTimeout(() => (btn.innerHTML = orig), 2000);
         }
 
-        // Falling "F" particles
+        // Falling F O M O particles
         const cv = document.getElementById('snow');
         const c = cv.getContext('2d');
         let W, H;
@@ -242,5 +680,4 @@
         })();
     </script>
 </body>
-
 </html>
