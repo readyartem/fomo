@@ -21,7 +21,7 @@ h1, h2, h3, h4, h5, h6,
 .section-h2-sub {
     font-family: var(--font-heading) !important;
 }
-body { background-color: #000; color: #fff; }
+body { background-color: #060510; color: #fff; }
 h1, h2, h3, h4, h5, h6 { color: #fff; text-shadow: none; }
 
 /* ===== Grid (reactstrap .row / .col-*) ===== */
