@@ -159,7 +159,7 @@ input:focus, textarea:focus, button:focus { outline: 2px solid #ffffff; border-c
 .roadmap-card .card-body { background-image: none; background-color: #000000; padding: 24px; }
 .roadmap-card .card-body .body-text { padding-left: 20px; padding-right: 20px; }
 .roadmap-card .card-body .body-text h5 { color: #fff; text-shadow: 0 4px 0 #000; }
-.roadmap-card .card-body .body-text p { color: #ffffff; max-width: 280px; margin-left: auto; margin-right: auto; }
+.roadmap-card .card-body .body-text p { color: #ffffff; }
 .roadmap-card h6.phase { background-color: #000000 !important; color: #fff !important; text-shadow: none; }
 .roadmap-card h6.phase.hot { background-color: #fff !important; color: #000 !important; }
 
