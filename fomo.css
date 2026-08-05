@@ -147,7 +147,7 @@ input:focus, textarea:focus, button:focus { outline: 2px solid #ffffff; border-c
 .tokenomics .btns button:nth-child(1) { background: #000000 !important; color: #ffffff !important; }
 .tokenomics .btns button:nth-child(2) { background: #000000 !important; color: #ffffff !important; }
 .tokenomics .btns button:nth-child(3) { background: #000000 !important; color: #ffffff !important; }
-.tokenomics .btns button { box-shadow: 4px 4px 0 0 #ffffff; font-family: var(--font-heading) !important; border-color: #ffffff; cursor: default; }
+.tokenomics .btns button { box-shadow: 4px 4px 0 0 #ffffff; font-family: var(--font-heading) !important; border-color: #ffffff; cursor: default; pointer-events: none; }
 .tokenomics .btns button svg { width: 26px; height: 26px; color: #ffffff; flex-shrink: 0; }
 
 /* ===== Community ===== */
