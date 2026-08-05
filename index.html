@@ -14,6 +14,21 @@
             --font-body: 'Pragati Narrow', sans-serif;
         }
 
+        /* --- Section spacing + reveal animations --- */
+        .section-pad { padding-top: 120px; padding-bottom: 120px; }
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal.delay-1 { transition-delay: 0.1s; }
+        .reveal.delay-2 { transition-delay: 0.2s; }
+        .reveal.delay-3 { transition-delay: 0.3s; }
+
         /* --- Marquee --- */
         .marquee-bar {
             background: #000;
@@ -21,20 +36,20 @@
             border-bottom: 2px solid #fff;
             overflow: hidden;
             white-space: nowrap;
-            padding: 14px 0;
+            padding: 18px 0;
         }
         .marquee-track {
             display: inline-flex;
-            animation: marqueeScroll 12s linear infinite;
-            gap: 60px;
+            animation: marqueeScroll 16s linear infinite;
+            gap: 80px;
         }
         .marquee-track span {
             font-family: var(--font-heading);
-            font-size: 14px;
-            letter-spacing: 2px;
+            font-size: 16px;
+            letter-spacing: 3px;
             text-transform: uppercase;
             color: #fff;
-            opacity: .9;
+            opacity: .95;
         }
         @keyframes marqueeScroll {
             0% { transform: translateX(0); }
@@ -416,6 +431,7 @@
 
         /* --- Responsive --- */
         @media (max-width: 767px) {
+            .section-pad { padding-top: 70px; padding-bottom: 70px; }
             .hero-new { padding-top: 80px; padding-bottom: 40px; }
             .hero-title-bg { font-size: 64px; margin-top: -20px; }
             .hero-visual img { max-width: 220px; }
@@ -429,7 +445,8 @@
             .tokenomics-new .tk-row { flex-direction: column; }
             .tokenomics-new .tk-img { flex: 0 0 auto; margin-top: 20px; }
             .tokenomics-new .tk-img img { max-width: 160px; }
-            .marquee-track span { font-size: 12px; }
+            .marquee-track span { font-size: 14px; }
+            .marquee-bar { padding: 14px 0; }
         }
     </style>
 </head>
@@ -494,8 +511,14 @@
         </section>
 
         <!-- ===== Marquee Bar ===== -->
-        <div class="marquee-bar">
+        <div class="marquee-bar reveal">
             <div class="marquee-track">
+                <span>LP Burned 67.3%</span>
+                <span>Mint Disabled</span>
+                <span>Freeze Disabled</span>
+                <span>Community 17.7%</span>
+                <span>Marketing 10%</span>
+                <span>CEX Listings 5%</span>
                 <span>LP Burned 67.3%</span>
                 <span>Mint Disabled</span>
                 <span>Freeze Disabled</span>
@@ -512,7 +535,7 @@
         </div>
 
         <!-- ===== Narrative ===== -->
-        <section id="how" style="padding-top:80px;padding-bottom:60px;">
+        <section id="how" class="section-pad reveal">
             <div class="container">
                 <div class="text-center">
                     <div class="sticker-label">The Narrative</div>
@@ -547,7 +570,7 @@
         </section>
 
         <!-- ===== The Vision ===== -->
-        <section id="roadmap" style="padding-top:60px;padding-bottom:60px;">
+        <section id="roadmap" class="section-pad reveal">
             <div class="container">
                 <h2 class="section-big-title">The Vision</h2>
                 <div class="vision-grid">
@@ -580,7 +603,7 @@
         </section>
 
         <!-- ===== Tokenomics ===== -->
-        <section id="tokenomics" style="padding-top:60px;padding-bottom:60px;">
+        <section id="tokenomics" class="section-pad reveal">
             <div class="container">
                 <div class="tokenomics-new">
                     <h3>Tokenomics</h3>
@@ -615,7 +638,7 @@
         </section>
 
         <!-- ===== Footer CTA ===== -->
-        <section class="footer-cta">
+        <section class="footer-cta reveal">
             <div class="container">
                 <h3>Wanna know more about FOMO?</h3>
                 <p>FOMO is the native token for the community and the app. Grab SOL, paste the contract, and join the wave.</p>
@@ -624,7 +647,7 @@
         </section>
 
         <!-- ===== Footer ===== -->
-        <footer class="site-footer">
+        <footer class="site-footer reveal">
             <img src="assets/group-2.png" alt="FOMO" style="height:48px;width:auto;display:block;margin:0 auto 12px;" />
             <p class="ft-copy">FOMO COIN &copy; 2026</p>
             <p class="ft-disc">$FOMO is a meme coin with no intrinsic value. Do your own research. Never invest more than you can afford to lose.</p>
@@ -632,6 +655,17 @@
     </div>
 
     <script>
+        // Scroll reveal animations
+        const reveals = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        reveals.forEach(el => revealObserver.observe(el));
+
         // Sticky header
         const hd = document.getElementById('heading');
         window.addEventListener('scroll', () => hd.classList.toggle('position-fixed', window.scrollY > 120));
