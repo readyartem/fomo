@@ -35,6 +35,7 @@ h1, h2, h3, h4, h5, h6 { color: #fff; text-shadow: none; }
 .heading { background-color: transparent; transition: background-color 0.4s ease; }
 .heading.position-fixed { background-color: #060510; }
 .heading-menu { background-color: transparent; }
+.heading-menu.show-menu { background-color: #060510 !important; }
 .heading-link { color: #fff; }
 .heading-link:hover, .heading-link.active { color: #ffffff; }
 .heading-toggler { color: #fff; }
