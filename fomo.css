@@ -227,7 +227,7 @@ input:focus, textarea:focus, button:focus { outline: 2px solid #ffffff; border-c
     section { padding-top: 40px; padding-bottom: 40px; }
 
     /* Hero */
-    .banner { padding-top: 0 !important; }
+    .banner { padding-top: 50px !important; }
     .banner-content { text-align: center !important; }
     .banner-content h1 { font-size: 44px !important; letter-spacing: 0 !important; line-height: 1 !important; margin-bottom: 8px !important; }
     .banner-content h3 { font-size: 16px !important; margin-bottom: 8px !important; }
