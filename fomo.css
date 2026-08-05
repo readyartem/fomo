@@ -33,7 +33,7 @@ h1, h2, h3, h4, h5, h6 { color: #fff; text-shadow: none; }
 
 /* ===== Header ===== */
 .heading { background-color: transparent; transition: background-color 0.4s ease; }
-.heading.position-fixed { background-color: #000000; }
+.heading.position-fixed { background-color: #060510; }
 .heading-menu { background-color: transparent; }
 .heading-link { color: #fff; }
 .heading-link:hover, .heading-link.active { color: #ffffff; }
@@ -43,7 +43,7 @@ h1, h2, h3, h4, h5, h6 { color: #fff; text-shadow: none; }
 /* ===== Social links ===== */
 .heading-actions { gap: 16px; }
 .social-link, .community-content-icon .icon {
-    background: #000000 !important;
+    background: #060510 !important;
     color: #fff !important;
     box-shadow: 5px 5px 0 0 #ffffff;
     border: 1px solid #ffffff;
@@ -70,12 +70,12 @@ h1, h2, h3, h4, h5, h6 { color: #fff; text-shadow: none; }
 
 /* Mascot text figure (replaces missing images) */
 .mascot { font-family: var(--font-heading) !important; color: #fff; line-height: 1; letter-spacing: 6px; }
-.banner-img .mascot { font-size: 220px; text-shadow: 0 18px 0 #000000; }
+.banner-img .mascot { font-size: 220px; text-shadow: 0 18px 0 #060510; }
 @media (max-width: 767px) { .banner-img .mascot { font-size: 120px; } }
 .about-wrap .inner .Logo .mascot { font-size: 56px; color: #ffffff; }
 
 /* ===== Token box ===== */
-.token { border: 2px solid #ffffff; background: #000000; box-shadow: 0 4px 0 #ffffff; padding: 10px 14px; }
+.token { border: 2px solid #ffffff; background: #060510; box-shadow: 0 4px 0 #ffffff; padding: 10px 14px; }
 .token p { color: #fff; }
 .token p::-webkit-scrollbar-track { background-color: #ffffff; }
 .token p::-webkit-scrollbar-thumb { background-color: #ffffff; }
@@ -86,29 +86,29 @@ h1, h2, h3, h4, h5, h6 { color: #fff; text-shadow: none; }
 .btn {
     --color: #fff; --border-color: #fff;
     font-family: var(--font-heading) !important;
-    background: #ffffff; color: #000000;
+    background: #ffffff; color: #060510;
     box-shadow: 0 4px 0 #ffffff;
     border-color: #ffffff;
 }
-.btn:hover { background-color: #000000 !important; color: #ffffff !important; border-color: #ffffff; }
+.btn:hover { background-color: #060510 !important; color: #ffffff !important; border-color: #ffffff; }
 
 /* ===== About / Thesis ===== */
 .about-wrap {
     border: double var(--border, 8px) transparent;
-    background-image: linear-gradient(180deg, #000000 32%, #000000 81%), linear-gradient(180deg, #000000, #000000 70%);
-    background-color: #000000;
+    background-image: linear-gradient(180deg, #060510 32%, #060510 81%), linear-gradient(180deg, #060510, #060510 70%);
+    background-color: #060510;
 }
-.about-wrap .inner { background-image: none; background-color: #000000; }
+.about-wrap .inner { background-image: none; background-color: #060510; }
 .about-wrap .inner .content h2 { background: none; color: #fff; }
 .about-wrap .inner .content p { color: #ffffff; }
 
 /* ===== Narrative cards ===== */
-.how-cards .single { border: 3px solid #ffffff; box-shadow: 6px 6px #ffffff; background: #000000; background-image: none; }
-.how-cards .single .text h5 { color: #fff; text-shadow: 0 5px 0 #000; -webkit-text-stroke-width: 0; }
+.how-cards .single { border: 3px solid #ffffff; box-shadow: 6px 6px #ffffff; background: #060510; background-image: none; }
+.how-cards .single .text h5 { color: #fff; text-shadow: 0 5px 0 #060510; -webkit-text-stroke-width: 0; }
 .how-cards .single .text p { color: #ffffff; }
 .counter {
     background-image: none !important;
-    background-color: #000000 !important;
+    background-color: #060510 !important;
 }
 .how-cards .single .counter span {
     color: #ffffff !important;
@@ -140,33 +140,33 @@ input::placeholder, textarea::placeholder { color: #ffffff !important; }
 input:focus, textarea:focus, button:focus { outline: 2px solid #ffffff; border-color: #ffffff; }
 
 /* ===== Tokenomics ===== */
-.tokenomics-wrap { border: 3px solid #ffffff; background: #000000; }
+.tokenomics-wrap { border: 3px solid #ffffff; background: #060510; }
 .tokenomics-wrap h3 { text-shadow: none; }
 .tokenomics-wrap ul { display: block; }
 .tokenomics-wrap ul li { color: #fff; display: flex; align-items: center; gap: 14px; }
 .tokenomics-wrap ul li svg { width: 28px; height: 28px; color: #ffffff; flex-shrink: 0; }
-.tokenomics .btns button:nth-child(1) { background: #000000 !important; color: #ffffff !important; }
-.tokenomics .btns button:nth-child(2) { background: #000000 !important; color: #ffffff !important; }
-.tokenomics .btns button:nth-child(3) { background: #000000 !important; color: #ffffff !important; }
+.tokenomics .btns button:nth-child(1) { background: #060510 !important; color: #ffffff !important; }
+.tokenomics .btns button:nth-child(2) { background: #060510 !important; color: #ffffff !important; }
+.tokenomics .btns button:nth-child(3) { background: #060510 !important; color: #ffffff !important; }
 .tokenomics .btns button { box-shadow: 4px 4px 0 0 #ffffff; font-family: var(--font-heading) !important; border-color: #ffffff; cursor: default; pointer-events: none; }
 .tokenomics .btns button svg { width: 26px; height: 26px; color: #ffffff; flex-shrink: 0; }
 
 /* ===== Community ===== */
-.community-content { background-image: none; background-color: #000000; border-color: #ffffff; }
-.community-content-text { background: #000000; border-color: #ffffff; }
+.community-content { background-image: none; background-color: #060510; border-color: #ffffff; }
+.community-content-text { background: #060510; border-color: #ffffff; }
 .community-content-text p { color: #ffffff !important; }
 
 /* ===== Roadmap ===== */
-.roadmap-card { border: 3px solid #ffffff; border-radius: 40px; box-shadow: 6px 6px #000000; overflow: hidden; }
-.roadmap-card .card-body { background-image: none; background-color: #000000; padding: 24px; }
+.roadmap-card { border: 3px solid #ffffff; border-radius: 40px; box-shadow: 6px 6px #060510; overflow: hidden; }
+.roadmap-card .card-body { background-image: none; background-color: #060510; padding: 24px; }
 .roadmap-card .card-body .body-text { padding-left: 20px; padding-right: 20px; }
-.roadmap-card .card-body .body-text h5 { color: #fff; text-shadow: 0 4px 0 #000; }
+.roadmap-card .card-body .body-text h5 { color: #fff; text-shadow: 0 4px 0 #060510; }
 .roadmap-card .card-body .body-text p { color: #ffffff; }
-.roadmap-card h6.phase { background-color: #000000 !important; color: #fff !important; text-shadow: none; }
-.roadmap-card h6.phase.hot { background-color: #fff !important; color: #000 !important; }
+.roadmap-card h6.phase { background-color: #060510 !important; color: #fff !important; text-shadow: none; }
+.roadmap-card h6.phase.hot { background-color: #fff !important; color: #060510 !important; }
 
 /* ===== Footer ===== */
-.footer { background-color: #000000 !important; border-top: 3px solid #ffffff !important; border-left: none !important; border-right: none !important; border-bottom: none !important; }
+.footer { background-color: #060510 !important; border-top: 3px solid #ffffff !important; border-left: none !important; border-right: none !important; border-bottom: none !important; }
 .footer p { color: #ffffff; }
 .footer .disclaimer { color: #ffffff; font-size: 14px; }
 
