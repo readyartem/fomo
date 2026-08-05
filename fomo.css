@@ -32,8 +32,9 @@ h1, h2, h3, h4, h5, h6 { color: #fff; text-shadow: none; }
 :root { --tw-ring-color: #ffffff !important; }
 
 /* ===== Header ===== */
-.heading.position-fixed { background-color: #000000; }
-.heading-menu { background-color: #000000; }
+.heading { background-color: transparent; transition: background-color 0.4s ease, backdrop-filter 0.4s ease; }
+.heading.position-fixed { background-color: #060510; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+.heading-menu { background-color: transparent; }
 .heading-link { color: #fff; }
 .heading-link:hover, .heading-link.active { color: #ffffff; }
 .heading-toggler { color: #fff; }
