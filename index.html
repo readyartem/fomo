@@ -466,9 +466,7 @@
 
 <body>
     <div id="root">
-        <div class="common-snowfall" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;">
-            <canvas id="snow" style="position:absolute;top:0;left:0;width:100%;height:100%;"></canvas>
-        </div>
+
 
         <!-- ===== Header ===== -->
         <header class="heading" id="heading">
@@ -687,32 +685,7 @@
             setTimeout(() => (btn.innerHTML = orig), 2000);
         }
 
-        // Falling F O M O particles
-        const cv = document.getElementById('snow');
-        const c = cv.getContext('2d');
-        let W, H;
-        const res = () => { W = cv.width = innerWidth; H = cv.height = innerHeight; };
-        res(); addEventListener('resize', res);
-        const FOMO = ['F','O','M','O'];
-        const P = Array.from({ length: 40 }, (_, i) => ({
-            x: Math.random() * innerWidth, y: Math.random() * -innerHeight,
-            s: 22 + Math.random() * 28, sp: .3 + Math.random() * .7,
-            d: -.3 + Math.random() * .6, r: Math.random() * 6.28, rs: -.01 + Math.random() * .02,
-            a: .08, letter: FOMO[i % 4]
-        }));
-        (function draw() {
-            c.clearRect(0, 0, W, H);
-            P.forEach(p => {
-                p.y += p.sp; p.x += p.d; p.r += p.rs;
-                if (p.y > H + 90) { p.y = -90; p.x = Math.random() * W; }
-                if (p.x < -70) p.x = W + 40; if (p.x > W + 70) p.x = -40;
-                c.save(); c.translate(p.x, p.y); c.rotate(p.r); c.globalAlpha = p.a;
-                c.font = '700 ' + p.s + 'px "Archivo Black", sans-serif';
-                c.textAlign = 'center'; c.textBaseline = 'middle';
-                c.fillStyle = '#fff'; c.fillText(p.letter, 0, 0); c.restore();
-            });
-            requestAnimationFrame(draw);
-        })();
+
     </script>
 </body>
 </html>
