@@ -230,12 +230,12 @@ input:focus, textarea:focus, button:focus { outline: 2px solid #ffffff; border-c
     .banner-content h1 { font-size: 44px !important; letter-spacing: 0 !important; line-height: 1 !important; margin-bottom: 8px !important; }
     .banner-content h3 { font-size: 16px !important; margin-bottom: 8px !important; }
     .banner-eyebrow { font-size: 10px !important; letter-spacing: 1px !important; margin-bottom: 10px !important; }
-    .banner-content p { font-size: 14px !important; line-height: 1.45 !important; margin-top: 10px !important; }
+    .banner-content p { font-size: 15px !important; line-height: 1.6 !important; margin-top: 14px !important; letter-spacing: 0.2px !important; }
     .banner-img { margin-top: 12px !important; }
     .banner-img img { max-width: 75%; margin: 0 auto; }
-    .token { padding: 6px 8px !important; margin-bottom: 8px !important; }
-    .token p { font-size: 11px !important; word-break: break-all; line-height: 1.35 !important; }
-    .token button { font-size: 12px !important; }
+    .token { padding: 8px 10px !important; margin-bottom: 10px !important; border-width: 2px !important; }
+    .token p { font-size: 13px !important; word-break: break-all; line-height: 1.5 !important; letter-spacing: 0.3px !important; }
+    .token button { font-size: 13px !important; font-weight: 700 !important; text-decoration: underline !important; text-underline-offset: 2px !important; }
     .banner-actions { justify-content: center !important; margin-top: 10px !important; }
 
     /* Narrative */
