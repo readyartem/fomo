@@ -220,11 +220,12 @@
         let W, H;
         const res = () => { W = cv.width = innerWidth; H = cv.height = innerHeight; };
         res(); addEventListener('resize', res);
-        const P = Array.from({ length: 18 }, () => ({
+        const FOMO = ['F','O','M','O'];
+        const P = Array.from({ length: 40 }, (_, i) => ({
             x: Math.random() * innerWidth, y: Math.random() * -innerHeight,
-            s: 26 + Math.random() * 30, sp: .35 + Math.random() * .8,
-            d: -.4 + Math.random() * .8, r: Math.random() * 6.28, rs: -.01 + Math.random() * .02,
-            a: .12
+            s: 22 + Math.random() * 28, sp: .3 + Math.random() * .7,
+            d: -.3 + Math.random() * .6, r: Math.random() * 6.28, rs: -.01 + Math.random() * .02,
+            a: .08, letter: FOMO[i % 4]
         }));
         (function draw() {
             c.clearRect(0, 0, W, H);
@@ -235,7 +236,7 @@
                 c.save(); c.translate(p.x, p.y); c.rotate(p.r); c.globalAlpha = p.a;
                 c.font = '700 ' + p.s + 'px "Archivo Black", sans-serif';
                 c.textAlign = 'center'; c.textBaseline = 'middle';
-                c.fillStyle = '#fff'; c.fillText('F', 0, 0); c.restore();
+                c.fillStyle = '#fff'; c.fillText(p.letter, 0, 0); c.restore();
             });
             requestAnimationFrame(draw);
         })();
