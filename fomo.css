@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Pragati+Narrow:wght@400;700&display=swap');
+
+/* ============================================================
+   FOMO BLACK THEME  (overrides monopoly.css, keeps layout/classes)
+   ============================================================ */
+
+/* ---- Strict 2-font system (only Archivo Black + Pragati Narrow everywhere) ---- */
+html { scroll-behavior: smooth; scroll-padding-top: 110px; }
+:root {
+    --font-heading: 'Archivo Black', sans-serif;
+    --font-body: 'Pragati Narrow', sans-serif;
+}
+* { font-family: var(--font-body) !important; }
+h1, h2, h3, h4, h5, h6,
+.logo, .mascot, .btn,
+.tokenomics .btns button,
+.counter span,
+.badge, .tag,
+.heading-link,
+.banner-eyebrow,
+.section-h2-sub {
+    font-family: var(--font-heading) !important;
+}
+body { background-color: #000; color: #fff; }
+h1, h2, h3, h4, h5, h6 { color: #fff; text-shadow: none; }
+
+/* ===== Grid (reactstrap .row / .col-*) ===== */
+.row { display: flex; flex-wrap: wrap; margin-left: -12px; margin-right: -12px; align-items: flex-start; position: relative; }
+.col-6, .col-4, .col-12, .col-xs-12, .col-md-10, .col-md-8, .col-md-6, .col-md-4, .col-lg-10, .col-lg-8, .col-lg-6, .col-lg-4 { position: relative; width: 100%; padding-left: 12px; padding-right: 12px; }
+@media (min-width: 992px) { .col-lg-10 { flex: 0 0 83.333%; max-width: 83.333%; } .col-lg-8 { flex: 0 0 66.666%; max-width: 66.666%; } .col-lg-6 { flex: 0 0 50%; max-width: 50%; } .col-lg-4 { flex: 0 0 33.333%; max-width: 33.333%; } }
+
+:root { --tw-ring-color: #ffffff !important; }
+
+/* ===== Header ===== */
+.heading.position-fixed { background-color: #000000; }
+.heading-menu { background-color: #000000; }
+.heading-link { color: #fff; }
+.heading-link:hover, .heading-link.active { color: #ffffff; }
+.heading-toggler { color: #fff; }
+.logo { font-family: var(--font-heading) !important; color: #fff; line-height: 1; }
+
+/* ===== Social links ===== */
+.heading-actions { gap: 16px; }
+.social-link, .community-content-icon .icon {
+    background: #000000 !important;
+    color: #fff !important;
+    box-shadow: 5px 5px 0 0 #ffffff;
+    border: 1px solid #ffffff;
+}
+.social-link:hover, .community-content-icon .icon:hover { box-shadow: 0 0 0 0 transparent !important; color: #ffffff !important; }
+
+/* ===== Banner extras (moved from inline <style>) ===== */
+.banner-eyebrow { color: #ffffff; font-size: 20px; letter-spacing: 8px; text-transform: uppercase; display: block; margin-bottom: 40px; }
+.banner-content h3 { text-transform: uppercase; }
+.banner-content p { margin-top: 20px; }
+.section-h2-sub { color: #ffffff; text-align: center; font-size: 20px; letter-spacing: 4px; margin-bottom: 8px; text-transform: uppercase; }
+
+/* ===== Banner ===== */
+.banner-content:after { display: none; }
+.banner-content span { color: #fff; }
+.banner-content h1 { color: #fff; }
+.banner-content h3, .banner-content p { color: #fff; }
+.banner-content h3 em { font-style: normal; color: #ffffff; }
+.banner-content p { color: #ffffff; }
+
+/* decorative imgs dimmed so they're subtle on black */
+.banner .style, .banner .bottomStyle { opacity: 1; }
+
+/* Mascot text figure (replaces missing images) */
+.mascot { font-family: var(--font-heading) !important; color: #fff; line-height: 1; letter-spacing: 6px; }
+.banner-img .mascot { font-size: 220px; text-shadow: 0 18px 0 #000000; }
+@media (max-width: 767px) { .banner-img .mascot { font-size: 120px; } }
+.about-wrap .inner .Logo .mascot { font-size: 56px; color: #ffffff; }
+
+/* ===== Token box ===== */
+.token { border: 2px solid #ffffff; background: #000000; box-shadow: 0 4px 0 #ffffff; padding: 10px 14px; }
+.token p { color: #fff; }
+.token p::-webkit-scrollbar-track { background-color: #ffffff; }
+.token p::-webkit-scrollbar-thumb { background-color: #ffffff; }
+.token button { color: #ffffff; }
+.token button:hover { color: #fff; }
+
+/* ===== Buttons (white bg, black text) ===== */
+.btn {
+    --color: #fff; --border-color: #fff;
+    font-family: var(--font-heading) !important;
+    background: #ffffff; color: #000000;
+    box-shadow: 0 4px 0 #ffffff;
+    border-color: #ffffff;
+}
+.btn:hover { background-color: #000000 !important; color: #ffffff !important; border-color: #ffffff; }
+
+/* ===== About / Thesis ===== */
+.about-wrap {
+    border: double var(--border, 8px) transparent;
+    background-image: linear-gradient(180deg, #000000 32%, #000000 81%), linear-gradient(180deg, #000000, #000000 70%);
+    background-color: #000000;
+}
+.about-wrap .inner { background-image: none; background-color: #000000; }
+.about-wrap .inner .content h2 { background: none; color: #fff; }
+.about-wrap .inner .content p { color: #ffffff; }
+
+/* ===== Narrative cards ===== */
+.how-cards .single { border: 3px solid #ffffff; box-shadow: 6px 6px #ffffff; background: #000000; background-image: none; }
+.how-cards .single .text h5 { color: #fff; text-shadow: 0 5px 0 #000; -webkit-text-stroke-width: 0; }
+.how-cards .single .text p { color: #ffffff; }
+.counter {
+    background-image: none !important;
+    background-color: #000000 !important;
+}
+.how-cards .single .counter span {
+    color: #ffffff !important;
+    font-family: var(--font-heading) !important;
+}
+
+/* ===== Section big titles + hero h1 (remove yellow gradient / stroke / shadow) ===== */
+.banner-content h1,
+.how-title h2,
+.tokenomics-wrap h3,
+.community-content-text h4,
+.roadmap-title h3,
+.about-wrap .inner .content h2 {
+    background: none !important;
+    -webkit-background-clip: border-box !important;
+    background-clip: border-box !important;
+    -webkit-text-fill-color: #ffffff !important;
+    color: #ffffff !important;
+    text-shadow: none !important;
+    -webkit-text-stroke-width: 0 !important;
+    -webkit-text-stroke-color: transparent !important;
+}
+
+/* ===== Global border-color fallback (override Tailwind gray defaults) ===== */
+*, :before, :after { border-color: #ffffff; }
+
+/* ===== Placeholder + focus ===== */
+input::placeholder, textarea::placeholder { color: #ffffff !important; }
+input:focus, textarea:focus, button:focus { outline: 2px solid #ffffff; border-color: #ffffff; }
+
+/* ===== Tokenomics ===== */
+.tokenomics-wrap { border: 3px solid #ffffff; background: #000000; }
+.tokenomics-wrap h3 { text-shadow: none; }
+.tokenomics-wrap ul { display: block; }
+.tokenomics-wrap ul li { color: #fff; display: flex; align-items: center; gap: 14px; }
+.tokenomics-wrap ul li svg { width: 28px; height: 28px; color: #ffffff; flex-shrink: 0; }
+.tokenomics .btns button:nth-child(1) { background: #000000 !important; color: #ffffff !important; }
+.tokenomics .btns button:nth-child(2) { background: #000000 !important; color: #ffffff !important; }
+.tokenomics .btns button:nth-child(3) { background: #000000 !important; color: #ffffff !important; }
+.tokenomics .btns button { box-shadow: 4px 4px 0 0 #ffffff; font-family: var(--font-heading) !important; border-color: #ffffff; cursor: default; }
+.tokenomics .btns button svg { width: 26px; height: 26px; color: #ffffff; flex-shrink: 0; }
+
+/* ===== Community ===== */
+.community-content { background-image: none; background-color: #000000; border-color: #ffffff; }
+.community-content-text { background: #000000; border-color: #ffffff; }
+.community-content-text p { color: #ffffff !important; }
+
+/* ===== Roadmap ===== */
+.roadmap-card { border: 3px solid #ffffff; border-radius: 40px; box-shadow: 6px 6px #000000; overflow: hidden; }
+.roadmap-card .card-body { background-image: none; background-color: #000000; }
+.roadmap-card .card-body .body-text h5 { color: #fff; text-shadow: 0 4px 0 #000; }
+.roadmap-card .card-body .body-text p { color: #ffffff; }
+.roadmap-card h6.phase { background-color: #000000 !important; color: #fff !important; text-shadow: none; }
+.roadmap-card h6.phase.hot { background-color: #fff !important; color: #000 !important; }
+
+/* ===== Footer ===== */
+.footer { background-color: #000000 !important; border-top: 3px solid #ffffff !important; border-left: none !important; border-right: none !important; border-bottom: none !important; }
+.footer p { color: #ffffff; }
+.footer .disclaimer { color: #ffffff; font-size: 14px; }
+
+/* ===== Placed media sizing ===== */
+.banner-img { text-align: center; margin-left: auto; margin-right: auto; }
+.banner-img img { max-width: 100%; margin: 30px auto 0; display: block; }
+
+/* ===== Thesis logo — above the "The Thesis" heading, clean ===== */
+.about-wrap .inner .Logo { position: relative; z-index: 2; margin-bottom: 20px; }
+.about-wrap .inner .Logo img {
+    width: 180px;
+    height: 180px;
+    max-width: 180px;
+    margin: 0 auto;
+    object-fit: contain;
+    background: none;
+    border: none;
+    box-shadow: none;
+    filter: none;
+}
+@media (max-width: 767px) {
+    .about-wrap .inner .Logo img { width: 130px; height: 130px; max-width: 130px; }
+}
+
+/* ===== Narrative icons (real SVGs) ===== */
+.how-cards .single .icon { display: flex; align-items: center; }
+.how-cards .single .icon svg { width: 72px; height: 72px; color: #ffffff; }
+@media (max-width: 991px) {
+    .how-cards .single .icon svg { width: 60px; height: 60px; }
+}
+
+/* ===== Narrative image — left, tilted, no glow ===== */
+.how-img {
+    max-width: 600px;
+    transform: rotate(-4deg);
+    animation: fomoFloat 5s ease-in-out infinite;
+}
+@media (max-width: 991px) {
+    .how-img { margin: 0 auto 40px; }
+}
+
+@keyframes fomoFloat {
+    0%, 100% { transform: rotate(-4deg) translateY(0); }
+    50% { transform: rotate(-4deg) translateY(-12px); }
+}
+
+/* ===== Tokenomics image — right column, bigger ===== */
+.tokenomics-wrap .img { padding-top: 60px; text-align: center; }
+.tokenomics-wrap .img img { max-width: 300px; }
+@media (max-width: 991px) {
+    .tokenomics-wrap .img { padding-top: 40px; }
+}
+
+/* ============================================================
+   MOBILE RESPONSIVE (full width, centered, readable)
+   ============================================================ */
+@media (max-width: 767px) {
+    .container { padding-left: 16px; padding-right: 16px; }
+
+    /* Hero */
+    .banner-content { text-align: center !important; }
+    .banner-content h1 { font-size: 72px !important; letter-spacing: -1px !important; }
+    .banner-content h3 { font-size: 22px !important; }
+    .banner-eyebrow { font-size: 14px !important; letter-spacing: 4px !important; margin-bottom: 20px !important; }
+    .banner-img img { max-width: 90%; margin: 20px auto 0; }
+    .token { padding: 8px 10px !important; }
+    .token p { font-size: 12px !important; word-break: break-all; }
+    .banner-actions { justify-content: center !important; }
+
+    /* Thesis */
+    .about-wrap { border-radius: 40px !important; }
+    .about-wrap .inner { padding: 30px 20px !important; }
+    .about-wrap .inner .content h2 { font-size: 32px !important; margin-bottom: 20px !important; }
+    .about-wrap .inner .content p { font-size: 16px !important; line-height: 1.5 !important; }
+    .about-wrap .inner .Logo img { width: 120px !important; height: 120px !important; }
+    .about-wrap .inner .content .flex { flex-direction: column !important; gap: 12px !important; }
+
+    /* Narrative */
+    .how-title h2 { font-size: 36px !important; }
+    .how-cards { justify-content: center !important; }
+    .how-cards .single { width: 100% !important; max-width: 100% !important; margin: 0 0 16px 0 !important; padding: 24px 20px !important; }
+    .how-cards .single .icon svg { width: 48px !important; height: 48px !important; }
+    .how-cards .single .text h5 { font-size: 24px !important; }
+    .how-cards .single .text p { font-size: 16px !important; }
+    .how-img { position: relative !important; top: auto !important; left: auto !important; max-width: 80%; margin: 0 auto 20px; display: block; transform: rotate(-2deg); }
+
+    /* Roadmap */
+    .roadmap-title h3 { font-size: 36px !important; }
+    .roadmap-card { border-radius: 24px !important; }
+    .roadmap-card .card-body .body-text h5 { font-size: 28px !important; }
+    .roadmap-card .card-body .body-text p { font-size: 18px !important; }
+
+    /* Tokenomics */
+    .tokenomics-wrap h3 { font-size: 36px !important; margin-bottom: 24px !important; }
+    .tokenomics-wrap ul li { font-size: 18px !important; gap: 10px !important; }
+    .tokenomics-wrap ul li svg { width: 22px !important; height: 22px !important; }
+    .tokenomics-wrap .img img { max-width: 200px !important; }
+    .tokenomics .btns { flex-direction: column !important; gap: 12px !important; }
+    .tokenomics .btns button { width: 100% !important; flex-grow: 0 !important; padding: 12px 16px !important; font-size: 14px !important; }
+
+    /* Footer */
+    .footer p { font-size: 18px !important; }
+    .footer .disclaimer { font-size: 12px !important; }
+
+    /* Buttons global */
+    .btn { width: 100% !important; justify-content: center !important; padding: 12px 20px !important; font-size: 14px !important; }
+}
